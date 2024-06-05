@@ -29,7 +29,7 @@ public class EmployeeDAO {
         st.setInt(7, e.getJob_id());
         st.setDouble(8,e.getSalary());
         st.setInt(9, e.getManager_id());
-        st.setInt(7, e.getDepartment_id());
+        st.setInt(10, e.getDepartment_id());
         st.executeUpdate();
     }
 
@@ -37,9 +37,9 @@ public class EmployeeDAO {
         Class.forName("org.sqlite.JDBC");
         Connection conn = DriverManager.getConnection(URL);
         PreparedStatement st = conn.prepareStatement(UPDATE_EMP);
-        st.setInt(1, e.getEmployee_id());
-        st.setString(2, e.getEmail());
-        st.setDouble(3, e.getSalary());
+        st.setInt(3, e.getEmployee_id());
+        st.setString(1, e.getEmail());
+        st.setDouble(2, e.getSalary());
         st.executeUpdate();
     }
 
